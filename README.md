@@ -1,5 +1,7 @@
 auto-deploy-by-rsync
 ====================
+Changes: To make the script work on mac
+Notices: If you have any trouble on mac with the script, leave an issue
 
 use inotify to check files change and auto deploy.
 
@@ -7,7 +9,7 @@ use inotify to check files change and auto deploy.
 
 Copy or link `auto-deploy-by-rsync`, `mac-auto-deploy` into you $PATH. 
 
-Just like `ln -s ~/projects/auto-deploy-by-rsync/mac-auto-deploy ~/.local/bin/`.
+Just like `ln -s ~/projects/auto-deploy-by-rsync/mac-auto-deploy /usr/local/bin`.
 
 ## Linux
 
@@ -22,7 +24,7 @@ auto-deploy-by-rsync . user@everet.org:~/work/2959_add_new_type_awards
 
 
 ## Mac
-In Mac OS X, we need fswatch.
+In Mac OS X, we need fswatch and ssh with public-key.
 
 ```
 brew install fswatch
@@ -31,8 +33,5 @@ brew install fswatch
 And run this on your project folder.
 
 ```
-mac-auto-deploy . gzhualiang@dev35:~/git/`basename $(PWD)`
+mac-auto-deploy . gzhualiang@dev35:~/git/project
 ```
-
-## Screencast
-![sample](http://everet.b0.upaiyun.com/imgs/mac_20140301_225042_77450LLb.gif)
